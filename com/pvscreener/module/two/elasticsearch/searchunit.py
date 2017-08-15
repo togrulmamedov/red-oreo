@@ -1,9 +1,10 @@
+# coding=utf-8
 from elasticsearch import Elasticsearch
 import com.pvscreener.module.general.CommonSearch as CommonSearch
 import os
 import sys
 
-
+# Класс для поиска и фильтрации данных:
 class SearchUnit(CommonSearch):
 
     def __init__(self, initial_directory = None):

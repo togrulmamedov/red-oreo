@@ -1,12 +1,17 @@
+# coding=utf-8
 from sys import stdin
 import sys
 import __builtin__
 
 
 class PVscreener(object):
+    # Переменная для проверки авторизации:
     __builtin__.AUTH = False
 
+    # Инициализируем систему (точка входа):
     def __init__(self):
+        # Временный ассоциативный массив для авторизации.
+        # В перспективе - целый модуль или класс безопасности.
         self.users = { "alexandr" : "p10V-scr", "tohrul" : "ee4n3r"}
         print('Hi :) Welcome to PVscreener!' + '\n')
 
@@ -24,6 +29,7 @@ class PVscreener(object):
 
         self.authenticate(username, password, self.users)
 
+        # Считываем команду и обрабатываем её:
         command = ''
         while command != 'exit':
             print('\n' + 'Enter command:')
@@ -31,6 +37,7 @@ class PVscreener(object):
             command = command.strip()
             self.processCommand(command)
 
+    # Логика аутентификации пользователей:
     def authenticate(self, username, password, usersList):
         isInBase = username in usersList
         passMatch = usersList.get(username, 0)
@@ -44,6 +51,10 @@ class PVscreener(object):
         print('\n' + 'Authentication failed!')
         sys.exit()
 
+    # Логика для обработки различных комманд:
+    # 1. Операции поиска и фильтрации данных.
+    # 2. Операции импорта и обработки данных.
+    # 3. Генерация моделей и получение результатов.
     def processCommand(self, command):
         if command != 'exit':
             print('Sorry! This command is not supported.')

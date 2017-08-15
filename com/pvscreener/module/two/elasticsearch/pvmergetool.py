@@ -1,9 +1,11 @@
+# coding=utf-8
 from __future__ import print_function
 
 import os
 import sys
 
 
+# Класс для слияния текстовых файлоа:
 class PVMergeTool(object):
     """Class for merging files into .txt with a parent path name."""
     topDir = '/home/pv/Downloads/JUnzips/'
